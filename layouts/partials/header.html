@@ -3,7 +3,7 @@
     <a class="navigation-title" href="{{ print "/" | absLangURL }}">
       {{ .Site.Title }}
     </a>
-    <ul class="navigation-list {{ if $.Site.Params.rtl }} float-left {{ else }} float-right {{ end }}">
+    <ul class="navigation-list float-right">
       {{ with .Site.Menus.main}}
         {{ range sort . }}
           <li class="navigation-item">
@@ -14,7 +14,7 @@
       {{ if .Site.IsMultiLingual }}
         {{ $node := . }}
         {{ .Scratch.Set "separator" true }}
-    
+
         {{ range .Site.Home.AllTranslations }}
           {{ if ne $.Site.Language .Language }}
             {{ if $node.Scratch.Get "separator" }}
